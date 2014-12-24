@@ -12,6 +12,7 @@ namespace dna {
 };
 
 class dna::counter {
+	/* Counts the number of nucleotides in a string */
 private:
 	map<char, int> m_Count;
 public:
@@ -23,6 +24,7 @@ public:
 	}
 
 	int count(char chNucleotide) const {
+		/* The number of a particular nucleotide */
 		try{ return m_Count.at(chNucleotide); }
 		catch (out_of_range){
 			throw invalid_argument("Invalid input: " + chNucleotide);
@@ -30,6 +32,7 @@ public:
 	}
 
 	map<char, int> nucleotide_counts() const {
+		/* returns the data structure */
 		return m_Count;
 	}
 };
