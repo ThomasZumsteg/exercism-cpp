@@ -46,7 +46,6 @@ BOOST_AUTO_TEST_CASE(a_new_school_has_an_empty_roster)
     BOOST_REQUIRE(school_.roster().empty());
 }
 
-//#if defined(EXERCISM_RUN_ALL_TESTS)
 BOOST_AUTO_TEST_CASE(adding_a_student_adds_them_to_the_roster_for_the_given_grade)
 {
     school_.add("Aimee", 2);
@@ -57,6 +56,7 @@ BOOST_AUTO_TEST_CASE(adding_a_student_adds_them_to_the_roster_for_the_given_grad
     REQUIRE_EQUAL_CONTAINERS(expected, actual);
 }
 
+//#if defined(EXERCISM_RUN_ALL_TESTS)
 BOOST_AUTO_TEST_CASE(adding_more_students_to_the_same_grade_adds_them_to_the_roster)
 {
     school_.add("Blair", 2);
