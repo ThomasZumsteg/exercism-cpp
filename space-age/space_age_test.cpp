@@ -22,7 +22,6 @@ BOOST_AUTO_TEST_CASE(age_in_earth_years)
     BOOST_REQUIRE_LT(std::abs(31.69 - age.on_earth()), accuracy);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 BOOST_AUTO_TEST_CASE(age_in_mercury_years)
 {
     const space_age::space_age age(2134835688);
@@ -39,6 +38,7 @@ BOOST_AUTO_TEST_CASE(age_in_venus_years)
     BOOST_REQUIRE_LT(std::abs(9.78 - age.on_venus()), accuracy);
 }
 
+//#if defined(EXERCISM_RUN_ALL_TESTS)
 BOOST_AUTO_TEST_CASE(age_in_mars_years)
 {
     const space_age::space_age age(2329871239);
@@ -78,4 +78,4 @@ BOOST_AUTO_TEST_CASE(age_in_neptune_year)
     BOOST_REQUIRE_LT(std::abs(260.16 - age.on_earth()), accuracy);
     BOOST_REQUIRE_LT(std::abs(1.58 - age.on_neptune()), accuracy);
 }
-#endif
+//#endif
