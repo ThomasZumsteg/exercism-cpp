@@ -1,12 +1,17 @@
 #pragma once
-#include <boost/date_time/gregorian/gregorian.hpp>
+
+#include <boost\date_time\gregorian\gregorian.hpp>
 #include <cmath>
 
 namespace gigasecond {
-    typedef boost::gregorian::date date;
-    
-    date advance(date dateStart) {
-        return date(2043, 1, 2);
-        //return dateStart + std::pow(10, 9);
-    }
+	using namespace std;
+
+	typedef boost::gregorian::date date;
+	typedef boost::gregorian::date_duration day;
+
+	date advance(date dateNow) {
+		/* Adds a gigasecond to the give date */
+		// converts gigaseconds to days (3600 seconds/hour, 24 hours/day)
+		return dateNow + day((long)pow(10, 9) / (3600 * 24));
+	}
 }
