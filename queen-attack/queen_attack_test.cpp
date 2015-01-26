@@ -28,7 +28,6 @@ BOOST_AUTO_TEST_CASE(queens_in_default_positions)
     BOOST_REQUIRE_EQUAL(std::make_pair(7, 3), board.black());
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 BOOST_AUTO_TEST_CASE(initialized_with_specific_positions)
 {
     const auto white = std::make_pair(3, 7);
@@ -102,4 +101,6 @@ BOOST_AUTO_TEST_CASE(queens_can_attack_yet_another_diagonally)
 
     BOOST_REQUIRE(board.can_attack());
 }
-#endif
+//#if defined(EXERCISM_RUN_ALL_TESTS)
+
+//#endif
