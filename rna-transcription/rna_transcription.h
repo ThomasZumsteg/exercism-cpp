@@ -1,22 +1,21 @@
-#ifndef RNA_TRANSCRIPTION_H
-#define RNA_TRANSCRIPTION_H
+#pragma once
 
 #include <string>
-#include <map>
 
 namespace transcription {
 	/* Changes DNA string to RNA*/
-	using namespace std;
-
-	// Nucleotide pairs, { DNA, RNA }
-	const map<char, char> DNA_RNA_map{ { 'G', 'C' },
-	{ 'A', 'U' },
-	{ 'T', 'A' },
-	{ 'C', 'G' } };
+	using std::string;
 
 	char to_rna(char chDNA) {
 		/* Converts a single DNA nucleotide to RNA */
-		return DNA_RNA_map.at(chDNA);
+		// Nucleotide pairs, { DNA, RNA }
+		switch (chDNA) {
+		case 'G': return 'C';
+		case 'A': return 'U';
+		case 'T': return 'A';
+		case 'C': return 'G';
+		default: return chDNA;
+		}
 	}
 
 	string to_rna(string strDNA) {
@@ -27,5 +26,3 @@ namespace transcription {
 		return strRNA;
 	}
 }
-
-#endif
